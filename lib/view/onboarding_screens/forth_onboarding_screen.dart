@@ -30,7 +30,9 @@ class ForthOnboardingScreen extends StatelessWidget {
                 AppButtons.customElevatedButton(
                   backgroundColor: Appcolors.btColor,
                   label: Appstrings.signIn,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/LoginScreens');
+                  },
                 ),
                 SizedBox(
                   height: AppSizes.smallPadding(context),
@@ -39,8 +41,7 @@ class ForthOnboardingScreen extends StatelessWidget {
                   backgroundColor: Appcolors.btColorW,
                   label: Appstrings.signUp,
                   onPressed: () {
-                    Navigator.pushReplacementNamed(
-                        context, '/onboardingFourth');
+                    Navigator.pushNamed(context, '/SignUpScreen');
                   },
                 ),
               ],

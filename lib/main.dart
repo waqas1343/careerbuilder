@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         initialRoute: RoutesNames.initialRoutes,
         routes: RoutesScreens.getScreens(),
         theme: AppTextTheme().appTheme,
-        home: LoginScreen(),
+        home: SplashScreen(),
       ),
     );
   }

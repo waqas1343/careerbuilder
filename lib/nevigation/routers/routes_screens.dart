@@ -1,4 +1,6 @@
 import 'package:careerbuilder/nevigation/routers/routes_naming.dart';
+import 'package:careerbuilder/view/auth/login_screen/login_screen.dart';
+import 'package:careerbuilder/view/auth/signup_screen/signup_screen.dart';
 import 'package:careerbuilder/view/onboarding_screens/forth_onboarding_screen.dart';
 import 'package:careerbuilder/view/onboarding_screens/main_screen.dart';
 import 'package:careerbuilder/view/onboarding_screens/second_onboarding_screen.dart';
@@ -18,8 +20,8 @@ class RoutesScreens {
       RoutesNames.onboardingTwo: (context) => const SecondOnboardingScreen(),
       RoutesNames.onboardingThird: (context) => const ThirdOnboardingScreen(),
       RoutesNames.onboardingFourth: (context) => const ForthOnboardingScreen(),
-      // RouteNames.enterotp: (context) => const EnterOtp(),
-      //RouteNames.notification: (context) => const LoginScreens(),
+      RoutesNames.login: (context) => LoginScreen(),
+      RoutesNames.signUp: (context) => SignupScreen(),
       // RouteNames.resend: (context) => const LoginScreens(),
       //RouteNames.signout: (context) => const LoginScreens(),
       // RouteNames.login: (context) => const LoginScreens(),

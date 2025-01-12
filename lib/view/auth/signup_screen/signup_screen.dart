@@ -8,12 +8,13 @@ import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
 import 'package:careerbuilder/view_model/validators/validators.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  SignupScreen({super.key});
 
-  final TextEditingController emailController = TextEditingController();
-
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController confirmPController = TextEditingController();
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -30,7 +31,7 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: AppSizes.height20(context),
+                  height: AppSizes.height10(context),
                 ),
                 Center(
                   child: CustomText(
@@ -43,6 +44,20 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: AppSizes.height10(context),
                 ),
+                ////////////user name yaha sy //
+                CustomText(
+                  text: Appstrings.userNamec,
+                  color: Appcolors.btColorW,
+                  fontWeight: FontWeight.w700,
+                  fontSize: AppSizes.smallBodyText(context),
+                ),
+                AppTextFields.customTextField(
+                    borderRadius: 50,
+                    prefixIcon: AppIcons.emailIcon,
+                    hintText: Appstrings.userName,
+                    controller: nameController,
+                    validator: Validators.enterName),
+                ////////////email yaha sy ///////////
                 CustomText(
                   text: Appstrings.email,
                   color: Appcolors.btColorW,
@@ -64,10 +79,28 @@ class LoginScreen extends StatelessWidget {
                   fontSize: AppSizes.smallBodyText(context),
                 ),
                 AppTextFields.customTextField(
+                    obscureText: true,
+                    suffixIcon: AppIcons.suffixIcon,
                     borderRadius: 50,
                     prefixIcon: AppIcons.passwordIcon,
                     hintText: Appstrings.hintPassword,
                     controller: passwordController,
+                    validator: Validators.passwordValidator),
+                /////password yaha sy //////
+                CustomText(
+                  text: Appstrings.confirmPassword,
+                  color: Appcolors.btColorW,
+                  fontWeight: FontWeight.w700,
+                  fontSize: AppSizes.smallBodyText(context),
+                ),
+
+                AppTextFields.customTextField(
+                    obscureText: true,
+                    borderRadius: 50,
+                    prefixIcon: AppIcons.passwordIcon,
+                    suffixIcon: AppIcons.suffixIcon,
+                    hintText: Appstrings.confirmPassword,
+                    controller: confirmPController,
                     validator: Validators.passwordValidator),
 
                 SizedBox(
@@ -77,20 +110,12 @@ class LoginScreen extends StatelessWidget {
                 Center(
                   child: AppButtons.customElevatedButton(
                       height: AppSizes.height05(context),
-                      label: Appstrings.buttonLogin,
+                      label: Appstrings.buttonSignUp,
                       onPressed: () {
-                        // Check if the form is valid
                         if (formKey.currentState?.validate() ?? false) {
-                          // If the form is valid, show a success message
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                                content: CustomText(text: 'Login Successful')),
-                          );
-
-                          // Navigate to the SignUpScreen immediately
-                          Navigator.pushNamed(context, '/SignUpScreen');
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: CustomText(text: 'Login Successful')));
                         } else {
-                          // If the form is invalid, show an error message
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                                 content: Text("Please correct the errors")),

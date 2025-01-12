@@ -10,6 +10,13 @@ class Appstrings {
   static const signUp = 'Sign up';
   static const validation = 'This field is required';
   static const emailRequired = 'Email is required';
+  static const validemail = 'Enter a valid email';
+  static const passwordRequired = 'Password is required';
+  static const passwordmust = 'Password must be at least 6 characters';
+  static const confirmPasswordR = 'Confirm password is required';
+  static const confirmPassword = 'Confirm password';
+  static const passwordMatchE = 'Confirm password is required';
+  static const enterName = 'Enter Your Name ';
   static const email = 'Email';
   static const password = 'Password';
 
@@ -22,6 +29,7 @@ class Appstrings {
 
 //button
   static const String buttonLogin = "Log in";
+  static const String buttonSignUp = "Sign Up";
   static const String buttonCreate = "Create an account";
 
   static const String hellouser = "Hello, Jane";
@@ -68,7 +76,8 @@ class Appstrings {
   static const String contentDesigner = "Content Designer";
 
   static const String myProfile = "My profile";
-  static const String userName = "Jane Sodi";
+  static const String userName = "Waqas iLyas";
+  static const String userNamec = "User Name";
   static const String statistics = "Statistics";
   static const String reviwes = "Reviews";
   static const String analytics = "Analytics";

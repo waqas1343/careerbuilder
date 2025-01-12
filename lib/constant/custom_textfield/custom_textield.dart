@@ -19,6 +19,10 @@ class AppTextFields {
       obscureText: obscureText,
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        errorStyle: TextStyle(
+          color: const Color.fromARGB(255, 24, 206, 166),
+          fontSize: 14,
+        ),
         hintText: hintText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
