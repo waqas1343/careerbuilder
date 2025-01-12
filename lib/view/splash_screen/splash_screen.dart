@@ -1,7 +1,7 @@
 import 'package:careerbuilder/constant/app_colours/appcolors.dart';
 import 'package:careerbuilder/constant/app_strings/appstrings.dart';
 import 'package:careerbuilder/constant/custom_text/custom_text.dart';
-import 'package:careerbuilder/homePage/home_page.dart';
+import 'package:careerbuilder/nevigation/routers/routes_naming.dart';
 import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,9 +17,7 @@ class SplashScreen extends StatelessWidget {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!splashscreen.isloading) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => HomePage()),
-        );
+        Navigator.of(context).pushReplacementNamed(RoutesNames.mainScreen);
       }
     });
 
@@ -33,7 +31,7 @@ class SplashScreen extends StatelessWidget {
             CustomText(
               text: Appstrings.logoT,
               color: Appcolors.textColor,
-              fontSize: AppSizes.smallPadding(context),
+              fontSize: AppSizes.titleFontSize(context),
               fontWeight: FontWeight.w700,
             )
           ],
