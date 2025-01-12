@@ -8,9 +8,14 @@ class Appstrings {
   static const next = 'Next';
   static const signIn = 'Sign in';
   static const signUp = 'Sign up';
+  static const validation = 'This field is required';
+  static const emailRequired = 'Email is required';
+  static const email = 'Email';
+  static const password = 'Password';
 
   static const String logInyour = "Log in your";
   static const String hintEmail = "careerplace@gmail.com";
+  static const String hintPassword = "••••••••••";
   static const String createAccount = "Create account";
   static const String hintUsername = "desing ninja";
   static const String hintFullname = "Jane Sodi";
