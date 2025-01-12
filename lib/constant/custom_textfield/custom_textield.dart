@@ -7,7 +7,7 @@ class AppTextFields {
     bool obscureText = false,
     TextInputType keyboardType = TextInputType.text,
     Icon? prefixIcon,
-    Icon? suffixIcon,
+    Widget? suffixIcon,
     Color? fillColor,
     Color? borderColor,
     double borderRadius = 12.0,

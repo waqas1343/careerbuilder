@@ -7,6 +7,9 @@ import 'package:careerbuilder/constant/custom_textfield/custom_textield.dart';
 import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
 import 'package:careerbuilder/view_model/validators/validators.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../view_model/Controller/suffix_controller.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
@@ -20,6 +23,7 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final iconVisibility = Provider.of<SuffixController>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -79,8 +83,14 @@ class SignupScreen extends StatelessWidget {
                   fontSize: AppSizes.smallBodyText(context),
                 ),
                 AppTextFields.customTextField(
-                    obscureText: true,
-                    suffixIcon: AppIcons.suffixIcon,
+                    obscureText: iconVisibility.isVisibleFirst,
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          iconVisibility.firstToggle();
+                        },
+                        icon: iconVisibility.isVisibleFirst
+                            ? AppIcons.suffixIconOff
+                            : AppIcons.suffixIconOnn),
                     borderRadius: 50,
                     prefixIcon: AppIcons.passwordIcon,
                     hintText: Appstrings.hintPassword,
@@ -95,10 +105,16 @@ class SignupScreen extends StatelessWidget {
                 ),
 
                 AppTextFields.customTextField(
-                    obscureText: true,
+                    obscureText: iconVisibility.isVisibleSecond,
                     borderRadius: 50,
                     prefixIcon: AppIcons.passwordIcon,
-                    suffixIcon: AppIcons.suffixIcon,
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          iconVisibility.secondToggle();
+                        },
+                        icon: iconVisibility.isVisibleSecond
+                            ? AppIcons.suffixIconOff
+                            : AppIcons.suffixIconOnn),
                     hintText: Appstrings.confirmPassword,
                     controller: confirmPController,
                     validator: Validators.passwordValidator),

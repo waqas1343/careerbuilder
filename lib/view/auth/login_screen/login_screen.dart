@@ -7,6 +7,9 @@ import 'package:careerbuilder/constant/custom_textfield/custom_textield.dart';
 import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
 import 'package:careerbuilder/view_model/validators/validators.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../view_model/Controller/suffix_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -19,6 +22,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final iconVisibility = Provider.of<SuffixController>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -64,7 +68,15 @@ class LoginScreen extends StatelessWidget {
                   fontSize: AppSizes.smallBodyText(context),
                 ),
                 AppTextFields.customTextField(
+                    obscureText: iconVisibility.isVisibleFirst,
                     borderRadius: 50,
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          iconVisibility.firstToggle();
+                        },
+                        icon: iconVisibility.isVisibleFirst
+                            ? AppIcons.suffixIconOff
+                            : AppIcons.suffixIconOnn),
                     prefixIcon: AppIcons.passwordIcon,
                     hintText: Appstrings.hintPassword,
                     controller: passwordController,
@@ -79,18 +91,14 @@ class LoginScreen extends StatelessWidget {
                       height: AppSizes.height05(context),
                       label: Appstrings.buttonLogin,
                       onPressed: () {
-                        // Check if the form is valid
                         if (formKey.currentState?.validate() ?? false) {
-                          // If the form is valid, show a success message
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                                 content: CustomText(text: 'Login Successful')),
                           );
 
-                          // Navigate to the SignUpScreen immediately
                           Navigator.pushNamed(context, '/SignUpScreen');
                         } else {
-                          // If the form is invalid, show an error message
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                                 content: Text("Please correct the errors")),
