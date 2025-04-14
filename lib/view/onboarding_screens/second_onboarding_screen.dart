@@ -1,10 +1,10 @@
-import 'package:careerbuilder/constant/app_button/app_button.dart';
-import 'package:careerbuilder/constant/app_colours/appcolors.dart';
-import 'package:careerbuilder/constant/app_images/app_images.dart';
-import 'package:careerbuilder/constant/app_strings/appstrings.dart';
-import 'package:careerbuilder/constant/custom_text/custom_text.dart';
-import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
+import 'package:careerbuilder/utils/constant/app_button/app_button.dart';
+import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
+import 'package:careerbuilder/utils/constant/app_images/app_images.dart';
+import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
+import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SecondOnboardingScreen extends StatelessWidget {
   const SecondOnboardingScreen({super.key});
@@ -13,19 +13,23 @@ class SecondOnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Appcolors.onBtwo,
-      body: Center(
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomText(
               textAlign: TextAlign.center,
-              text: Appstrings.onBtitles,
-              color: Appcolors.textColor,
-              fontSize: AppSizes.titleFontSize(context),
-              fontWeight: FontWeight.w700,
+              text: Appstrings.onboardingTitle2,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
-            Image.asset(AppImages.onBoarding2),
+            Image.asset(
+              AppImages.onBoarding2,
+              fit: BoxFit.contain,
+              height: 45.h,
+            ),
             AppButtons.customElevatedButton(
+              context: context,
               backgroundColor: Appcolors.onBtwo,
               label: Appstrings.next,
               onPressed: () {

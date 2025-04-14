@@ -1,6 +1,6 @@
-import 'package:careerbuilder/constant/app_colours/appcolors.dart';
-import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
+import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: AppSizes.bodyFontSize(context),
+            height:100.h,
             width: double.infinity,
             color: Appcolors.mainColor,
           )

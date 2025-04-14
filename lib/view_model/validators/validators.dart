@@ -1,4 +1,4 @@
-import 'package:careerbuilder/constant/app_strings/appstrings.dart';
+import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
 
 class Validators {
   static String? enterName(String? value) {

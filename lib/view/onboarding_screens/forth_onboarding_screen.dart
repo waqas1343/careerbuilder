@@ -1,10 +1,10 @@
-import 'package:careerbuilder/constant/app_button/app_button.dart';
-import 'package:careerbuilder/constant/app_colours/appcolors.dart';
-import 'package:careerbuilder/constant/app_images/app_images.dart';
-import 'package:careerbuilder/constant/app_strings/appstrings.dart';
-import 'package:careerbuilder/constant/custom_text/custom_text.dart';
-import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
+import 'package:careerbuilder/utils/constant/app_button/app_button.dart';
+import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
+import 'package:careerbuilder/utils/constant/app_images/app_images.dart';
+import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
+import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class ForthOnboardingScreen extends StatelessWidget {
   const ForthOnboardingScreen({super.key});
@@ -13,21 +13,25 @@ class ForthOnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Appcolors.onBOne,
-      body: Center(
+      body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomText(
               textAlign: TextAlign.center,
-              text: Appstrings.onBtitleff,
-              color: Appcolors.textColor,
-              fontSize: AppSizes.titleFontSize(context),
-              fontWeight: FontWeight.w700,
+              text: Appstrings.onboardingTitle4,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
-            Image.asset(AppImages.onBoarding4),
+            Image.asset(
+              AppImages.onBoarding4,
+              fit: BoxFit.cover,
+              height: 50.h,
+            ),
             Column(
               children: [
                 AppButtons.customElevatedButton(
+                  context: context,
                   backgroundColor: Appcolors.btColor,
                   label: Appstrings.signIn,
                   onPressed: () {
@@ -35,9 +39,10 @@ class ForthOnboardingScreen extends StatelessWidget {
                   },
                 ),
                 SizedBox(
-                  height: AppSizes.smallPadding(context),
+                  height: 1.h,
                 ),
                 AppButtons.customElevatedButton(
+                  context: context,
                   backgroundColor: Appcolors.btColorW,
                   label: Appstrings.signUp,
                   onPressed: () {

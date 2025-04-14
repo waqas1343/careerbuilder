@@ -1,13 +1,13 @@
-import 'package:careerbuilder/constant/app_button/app_button.dart';
-import 'package:careerbuilder/constant/app_colours/appcolors.dart';
-import 'package:careerbuilder/constant/app_icons/app_icons.dart';
-import 'package:careerbuilder/constant/app_strings/appstrings.dart';
-import 'package:careerbuilder/constant/custom_text/custom_text.dart';
-import 'package:careerbuilder/constant/custom_textfield/custom_textield.dart';
-import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
+import 'package:careerbuilder/utils/constant/app_button/app_button.dart';
+import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
+import 'package:careerbuilder/utils/constant/app_icons/app_icons.dart';
+import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
+import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
+import 'package:careerbuilder/utils/constant/custom_textfield/custom_textield.dart';
 import 'package:careerbuilder/view_model/validators/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../view_model/Controller/suffix_controller.dart';
 
@@ -15,9 +15,7 @@ class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
-
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
@@ -26,7 +24,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(AppSizes.mediumPadding(context)),
+          padding: EdgeInsets.all(1.h),
           child: Form(
             key: formKey,
             child: Column(
@@ -34,24 +32,20 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: AppSizes.height20(context),
+                  height: 20.h,
                 ),
                 Center(
                   child: CustomText(
                     text: Appstrings.logInyour,
-                    color: Appcolors.btColorW,
-                    fontSize: AppSizes.titleFontSize(context),
-                    fontWeight: FontWeight.w700,
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
                 ),
                 SizedBox(
-                  height: AppSizes.height10(context),
+                  height: 10.h,
                 ),
                 CustomText(
                   text: Appstrings.email,
-                  color: Appcolors.btColorW,
-                  fontWeight: FontWeight.w700,
-                  fontSize: AppSizes.smallBodyText(context),
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 AppTextFields.customTextField(
                     borderRadius: 50,
@@ -64,8 +58,7 @@ class LoginScreen extends StatelessWidget {
                 CustomText(
                   text: Appstrings.password,
                   color: Appcolors.btColorW,
-                  fontWeight: FontWeight.w700,
-                  fontSize: AppSizes.smallBodyText(context),
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 AppTextFields.customTextField(
                     obscureText: iconVisibility.isVisibleFirst,
@@ -83,30 +76,30 @@ class LoginScreen extends StatelessWidget {
                     validator: Validators.passwordValidator),
 
                 SizedBox(
-                  height: AppSizes.largeBodyText(context),
+                  height: 1.h,
                 ),
 
                 Center(
                   child: AppButtons.customElevatedButton(
-                      height: AppSizes.height05(context),
-                      label: Appstrings.buttonLogin,
-                      onPressed: () {
-                        if (formKey.currentState?.validate() ?? false) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                                content: CustomText(text: 'Login Successful')),
-                          );
+                    context: context,
+                    label: Appstrings.buttonLogin,
+                    onPressed: () {
+                      if (formKey.currentState?.validate() ?? false) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                              content: CustomText(text: 'Login Successful')),
+                        );
 
-                          Navigator.pushNamed(context, '/SignUpScreen');
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                                content: Text("Please correct the errors")),
-                          );
-                        }
-                      },
-                      backgroundColor: Appcolors.mainColor,
-                      width: AppSizes.height50(context)),
+                        Navigator.pushNamed(context, '/SignUpScreen');
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Please correct the errors")),
+                        );
+                      }
+                    },
+                    backgroundColor: Appcolors.mainColor,
+                    width: double.infinity,
+                  ),
                 )
               ],
             ),

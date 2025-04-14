@@ -1,13 +1,13 @@
-import 'package:careerbuilder/constant/app_button/app_button.dart';
-import 'package:careerbuilder/constant/app_colours/appcolors.dart';
-import 'package:careerbuilder/constant/app_icons/app_icons.dart';
-import 'package:careerbuilder/constant/app_strings/appstrings.dart';
-import 'package:careerbuilder/constant/custom_text/custom_text.dart';
-import 'package:careerbuilder/constant/custom_textfield/custom_textield.dart';
-import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
+import 'package:careerbuilder/utils/constant/app_button/app_button.dart';
+import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
+import 'package:careerbuilder/utils/constant/app_icons/app_icons.dart';
+import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
+import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
+import 'package:careerbuilder/utils/constant/custom_textfield/custom_textield.dart';
 import 'package:careerbuilder/view_model/validators/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../view_model/Controller/suffix_controller.dart';
 
@@ -18,16 +18,14 @@ class SignupScreen extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController confirmPController = TextEditingController();
-
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     final iconVisibility = Provider.of<SuffixController>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(AppSizes.mediumPadding(context)),
+          padding: EdgeInsets.all(1.h),
           child: Form(
             key: formKey,
             child: Column(
@@ -35,25 +33,22 @@ class SignupScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: AppSizes.height10(context),
+                  height: 10.h,
                 ),
                 Center(
                   child: CustomText(
-                    text: Appstrings.logInyour,
-                    color: Appcolors.btColorW,
-                    fontSize: AppSizes.titleFontSize(context),
-                    fontWeight: FontWeight.w700,
+                    textAlign: TextAlign.center,
+                    text: Appstrings.createAccount,
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
                 ),
                 SizedBox(
-                  height: AppSizes.height10(context),
+                  height: 8.h,
                 ),
                 ////////////user name yaha sy //
                 CustomText(
                   text: Appstrings.userNamec,
-                  color: Appcolors.btColorW,
-                  fontWeight: FontWeight.w700,
-                  fontSize: AppSizes.smallBodyText(context),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 AppTextFields.customTextField(
                     borderRadius: 50,
@@ -64,9 +59,7 @@ class SignupScreen extends StatelessWidget {
                 ////////////email yaha sy ///////////
                 CustomText(
                   text: Appstrings.email,
-                  color: Appcolors.btColorW,
-                  fontWeight: FontWeight.w700,
-                  fontSize: AppSizes.smallBodyText(context),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 AppTextFields.customTextField(
                     borderRadius: 50,
@@ -78,9 +71,7 @@ class SignupScreen extends StatelessWidget {
                 ///////////password yaha sy ///////////////
                 CustomText(
                   text: Appstrings.password,
-                  color: Appcolors.btColorW,
-                  fontWeight: FontWeight.w700,
-                  fontSize: AppSizes.smallBodyText(context),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 AppTextFields.customTextField(
                     obscureText: iconVisibility.isVisibleFirst,
@@ -99,9 +90,7 @@ class SignupScreen extends StatelessWidget {
                 /////password yaha sy //////
                 CustomText(
                   text: Appstrings.confirmPassword,
-                  color: Appcolors.btColorW,
-                  fontWeight: FontWeight.w700,
-                  fontSize: AppSizes.smallBodyText(context),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
 
                 AppTextFields.customTextField(
@@ -120,26 +109,27 @@ class SignupScreen extends StatelessWidget {
                     validator: Validators.passwordValidator),
 
                 SizedBox(
-                  height: AppSizes.largeBodyText(context),
+                  height: 1.h,
                 ),
 
                 Center(
                   child: AppButtons.customElevatedButton(
-                      height: AppSizes.height05(context),
-                      label: Appstrings.buttonSignUp,
-                      onPressed: () {
-                        if (formKey.currentState?.validate() ?? false) {
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: CustomText(text: 'Login Successful')));
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                                content: Text("Please correct the errors")),
-                          );
-                        }
-                      },
-                      backgroundColor: Appcolors.mainColor,
-                      width: AppSizes.height50(context)),
+                    context: context,
+                    height: 7.h,
+                    label: Appstrings.buttonCreate,
+                    onPressed: () {
+                      if (formKey.currentState?.validate() ?? false) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: CustomText(text: 'Login Successful')));
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Please correct the errors")),
+                        );
+                      }
+                    },
+                    backgroundColor: Appcolors.mainColor,
+                    width: double.infinity,
+                  ),
                 )
               ],
             ),

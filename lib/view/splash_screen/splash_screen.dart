@@ -1,8 +1,8 @@
-import 'package:careerbuilder/constant/app_colours/appcolors.dart';
-import 'package:careerbuilder/constant/app_strings/appstrings.dart';
-import 'package:careerbuilder/constant/custom_text/custom_text.dart';
+import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
+import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
+import 'package:careerbuilder/utils/constant/app_system_ui/app_system_ui.dart';
+import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
 import 'package:careerbuilder/nevigation/routers/routes_naming.dart';
-import 'package:careerbuilder/utils/app_sizes/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../view_model/Controller/splashscreen_controller.dart';
@@ -12,6 +12,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppSystemUI.setOverlayColor(Appcolors.mainColor);
     final splashscreen = Provider.of<SplashscreenController>(context);
     splashscreen.loadingScreen();
 
@@ -31,9 +32,8 @@ class SplashScreen extends StatelessWidget {
             CustomText(
               text: Appstrings.logoT,
               color: Appcolors.textColor,
-              fontSize: AppSizes.titleFontSize(context),
-              fontWeight: FontWeight.w700,
-            )
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
           ],
         ),
       ),
