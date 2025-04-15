@@ -7,13 +7,14 @@ class RoutesNames {
   //auth module
 
   static const String mainScreen = "/mainScreen";
- 
   static const String onboardingTwo = "/onboardingTwo";
   static const String onboardingThird = "/onboardingThird";
   static const String onboardingFourth = "/onboardingFourth";
-
   static const String login = "/LoginScreens";
   static const String signUp = "/SignUpScreen";
+  static const String homeScreen = "/homeScreen";
+  static const String bottomNavigation = "/bottomNavigation";
+
   static const String signout = "/";
   static const String forgotpassword = "/ForgetPassword";
   static const String resetpassword = "/ResetPassword";

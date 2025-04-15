@@ -42,10 +42,14 @@ class Appstrings {
   static const String courses = "Courses";
   static const String uxuiDesigner = "UX/UIdesigner";
   static const String lectures = "Lectures";
-  static const String figmaComponets = "Figma components";
-  static const String designPortfolio = "Design portfolio + 2 case ";
+  static const String figma = "Figma";
+  static const String componets = "Componets";
+  static const String designPortfolio = "Design portfolio";
+  static const String caseIncrement = "+ 2 case";
   static const String onTop = "On Top";
-  static const String adobeFullcourse = "Adobe Full curse ";
+  static const String adobe = "Adobe";
+  static const String fullcourse = "Full curse";
+  static const String developer = "Developer";
 
   static const String popularSearch = "Popular search";
   static const String adobePhoto = "Adobe Photoshop";

@@ -11,6 +11,7 @@ class AppButtons {
     double? width,
     double? height,
     double? borderRadius,
+    bool hasBorder = true,
   }) {
     return ElevatedButton(
       onPressed: onPressed,
@@ -18,17 +19,16 @@ class AppButtons {
         backgroundColor: backgroundColor,
         minimumSize: Size(width ?? 200, height ?? 50),
         shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: Appcolors.textColor,
-            width: 2,
-          ),
+          side: hasBorder
+              ? BorderSide(color: Appcolors.textColor, width: 2)
+              : BorderSide.none,
           borderRadius: BorderRadius.circular(borderRadius ?? 50),
         ),
         elevation: 5,
       ),
       child: Text(
         label,
-        style: TextStyle(fontSize: 20, color: Appcolors.textColor),
+        style: TextStyle(fontSize: 20, color: textColor ?? Appcolors.textColor),
       ),
     );
   }

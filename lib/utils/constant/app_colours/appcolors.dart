@@ -8,10 +8,10 @@ class Appcolors {
   static const Color onBtwo = Color(0xffF7CE45);
   static const Color onBthird = Color(0xffAB93E0);
   static const Color lightgrey = Color(0xffAB93E0);
- 
+  static const Color greyColur = Colors.grey;
+  static const Color redColor = Color(0xFFFF6F4D);
 
   /////////////////button Color//////
   static const Color btColor = Color(0xffF5F378);
   static const Color btColorW = Color(0xffFFFFFF);
-  
 }

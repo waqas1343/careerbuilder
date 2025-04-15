@@ -1,7 +1,9 @@
+import 'package:careerbuilder/nevigation/app_nevigators/app_nevigation.dart';
 import 'package:careerbuilder/utils/constant/app_button/app_button.dart';
 import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
 import 'package:careerbuilder/utils/constant/app_images/app_images.dart';
 import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
+import 'package:careerbuilder/utils/constant/app_system_ui/app_system_ui.dart';
 import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -11,6 +13,7 @@ class ThirdOnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppSystemUI.setOverlayColor(Appcolors.onBthird);
     return Scaffold(
       backgroundColor: Appcolors.onBthird,
       body: SafeArea(
@@ -33,7 +36,7 @@ class ThirdOnboardingScreen extends StatelessWidget {
               backgroundColor: Appcolors.onBthird,
               label: Appstrings.next,
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/onboardingFourth');
+                 AppNavigators.changescreen(context, '/onboardingFourth');
               },
             )
           ],

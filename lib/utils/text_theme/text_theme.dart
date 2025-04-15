@@ -28,7 +28,7 @@ class AppTextTheme {
       bodyLarge: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
-          color: Appcolors.btColorW),
+          color: Appcolors.textColor),
       bodyMedium: TextStyle(
           fontSize: 15, fontWeight: FontWeight.w900, color: Appcolors.btColorW),
       bodySmall: TextStyle(
@@ -38,9 +38,13 @@ class AppTextTheme {
       labelLarge: TextStyle(
           fontSize: 14, fontWeight: FontWeight.w600, color: Appcolors.bgColor),
       labelMedium: TextStyle(
-          fontSize: 12, fontWeight: FontWeight.w500, color: Appcolors.bgColor),
+          fontSize: 12,
+          fontWeight: FontWeight.w700,
+          color: Appcolors.mainColor),
       labelSmall: TextStyle(
-          fontSize: 10, fontWeight: FontWeight.w400, color: Appcolors.bgColor),
+          fontSize: 10,
+          fontWeight: FontWeight.w400,
+          color: Appcolors.greyColur),
     ),
   );
 
@@ -48,7 +52,7 @@ class AppTextTheme {
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Appcolors.bgColor,
     fontFamily: "Oddval",
-    textTheme: const TextTheme(
+    textTheme: TextTheme(
       displayLarge: TextStyle(fontSize: 32, color: Colors.white),
       displayMedium: TextStyle(
           fontSize: 28, fontWeight: FontWeight.w600, color: Colors.white),
@@ -66,7 +70,9 @@ class AppTextTheme {
       titleSmall: TextStyle(
           fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white60),
       bodyLarge: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w900, color: Colors.white),
+          fontSize: 16,
+          fontWeight: FontWeight.w900,
+          color: Appcolors.textColor),
       bodyMedium: TextStyle(
           fontSize: 15, fontWeight: FontWeight.w900, color: Colors.white),
       bodySmall: TextStyle(
@@ -74,9 +80,13 @@ class AppTextTheme {
       labelLarge: TextStyle(
           fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
       labelMedium: TextStyle(
-          fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white70),
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+          color: Appcolors.textColor),
       labelSmall: TextStyle(
-          fontSize: 10, fontWeight: FontWeight.w400, color: Colors.white60),
+          fontSize: 10,
+          fontWeight: FontWeight.w400,
+          color: Appcolors.textColor),
     ),
   );
 }

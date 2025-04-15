@@ -1,3 +1,5 @@
+import 'package:careerbuilder/nevigation/app_nevigators/app_nevigation.dart';
+import 'package:careerbuilder/nevigation/routers/routes_naming.dart';
 import 'package:careerbuilder/utils/constant/app_button/app_button.dart';
 import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
 import 'package:careerbuilder/utils/constant/app_icons/app_icons.dart';
@@ -90,7 +92,8 @@ class LoginScreen extends StatelessWidget {
                               content: CustomText(text: 'Login Successful')),
                         );
 
-                        Navigator.pushNamed(context, '/SignUpScreen');
+                        AppNavigators.changescreen(
+                            context, RoutesNames.bottomNavigation);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text("Please correct the errors")),
