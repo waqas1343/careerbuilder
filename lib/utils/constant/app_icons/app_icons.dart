@@ -6,6 +6,16 @@ class AppIcons {
   static const Icon passwordIcon = Icon(Icons.lock);
   static const Icon suffixIconOff = Icon(Icons.visibility_off_outlined);
   static const Icon suffixIconOnn = Icon(Icons.visibility_outlined);
+
+  static const Icon searchIcon = Icon(
+    Icons.search_outlined,
+    color: Appcolors.greyColur,
+  );
+  static const Icon menuIcon = Icon(
+    Icons.menu_outlined,
+    color: Appcolors.greyColur,
+  );
+
   static Icon notificationIcon = Icon(
     Icons.notifications_none,
     color: Appcolors.greyColur,

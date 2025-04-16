@@ -1,4 +1,4 @@
-import 'package:careerbuilder/homePage/home_page.dart';
+import 'package:careerbuilder/view/screens/homePage/home_page.dart';
 import 'package:careerbuilder/view_model/Controller/bottom_navigation_controller/bottom_navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

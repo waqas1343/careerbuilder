@@ -1,8 +1,29 @@
-import 'package:careerbuilder/model/course_model/course_listview_model.dart';
 import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
 import 'package:careerbuilder/utils/constant/app_images/app_images.dart';
 import 'package:careerbuilder/utils/constant/app_strings/appstrings.dart';
 import 'package:flutter/material.dart';
+
+class CourseCardModel {
+  final String title;
+  final String roll;
+  final String price;
+  final double rating;
+  final String hours;
+  final String people;
+  final Color color;
+  final String imageAsset;
+
+  CourseCardModel({
+    required this.roll,
+    required this.title,
+    required this.price,
+    required this.rating,
+    required this.hours,
+    required this.people,
+    required this.color,
+    required this.imageAsset,
+  });
+}
 
 final List<CourseCardModel> courseList = [
   CourseCardModel(

@@ -23,7 +23,16 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 10),
               SizedBox(
                 width: double.infinity,
-                child: CategoryList(),
+                child: CategoryList(
+                  categories: [
+                    Appstrings.uxui,
+                    Appstrings.python,
+                    Appstrings.marketing,
+                    Appstrings.gamedev,
+                    Appstrings.coding,
+                    Appstrings.java,
+                  ],
+                ),
               ),
               SizedBox(height: 3.h),
               Row(

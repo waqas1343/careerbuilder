@@ -95,6 +95,7 @@ class Appstrings {
   static const String noMoreNotification = "No more notifications";
 
   static const String favorite = "Favorites";
+  static const String categories = "Categories";
 
   static const String editProfile = "Edit profile";
   static const String payment = "Payment";

@@ -1,19 +1,16 @@
 import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
+import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
 import 'package:careerbuilder/view_model/Controller/category_selector_controller/category_selector_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CategoryList extends StatelessWidget {
-  final List<String> categories = [
-    "UX/UI",
-    "Python",
-    "Marketing",
-    "Game Dev",
-    "Coding",
-    "Java",
-  ];
+  final List<String> categories;
 
-  CategoryList({super.key});
+  const CategoryList({
+    super.key,
+    required this.categories,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +35,11 @@ class CategoryList extends StatelessWidget {
               ),
               color: isSelected ? Appcolors.mainColor : Colors.transparent,
             ),
-            child: Text(
-              category,
+            child: CustomText(
+              text: category,
+              textAlign: TextAlign.center,
               style: TextStyle(
+                fontSize: 10,
                 color: isSelected ? Appcolors.textColor : Appcolors.greyColur,
                 fontWeight: FontWeight.w500,
               ),

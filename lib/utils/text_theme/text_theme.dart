@@ -22,7 +22,7 @@ class AppTextTheme {
       titleLarge: TextStyle(
           fontSize: 18, fontWeight: FontWeight.w500, color: Appcolors.bgColor),
       titleMedium: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w400, color: Appcolors.bgColor),
+          fontSize: 16, fontWeight: FontWeight.w400, color: Appcolors.btColorW),
       titleSmall: TextStyle(
           fontSize: 14, fontWeight: FontWeight.w400, color: Appcolors.bgColor),
       bodyLarge: TextStyle(
