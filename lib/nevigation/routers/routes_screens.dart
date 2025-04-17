@@ -1,4 +1,4 @@
-import 'package:careerbuilder/view/screens/homePage/home_page.dart';
+import 'package:careerbuilder/view/screens/homepage_screen/home_page.dart';
 import 'package:careerbuilder/nevigation/routers/routes_naming.dart';
 import 'package:careerbuilder/view/auth/login_screen/login_screen.dart';
 import 'package:careerbuilder/view/auth/signup_screen/signup_screen.dart';

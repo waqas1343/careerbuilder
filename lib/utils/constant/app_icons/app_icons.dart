@@ -6,6 +6,10 @@ class AppIcons {
   static const Icon passwordIcon = Icon(Icons.lock);
   static const Icon suffixIconOff = Icon(Icons.visibility_off_outlined);
   static const Icon suffixIconOnn = Icon(Icons.visibility_outlined);
+  static const Icon leftArrowIcon =
+      Icon(Icons.arrow_back_ios, color: Colors.white70, size: 16);
+  static const Icon rightArrowIcon =
+      Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 16);
 
   static const Icon searchIcon = Icon(
     Icons.search_outlined,

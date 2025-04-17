@@ -33,7 +33,6 @@ class ExploreScreen extends StatelessWidget {
                 controller: searchController,
                 validator: Validators.emailValidation,
               ),
-
               SizedBox(height: 2.h),
               CustomText(
                 text: Appstrings.popularSearch,
@@ -43,7 +42,6 @@ class ExploreScreen extends StatelessWidget {
                     ?.copyWith(color: Appcolors.mainColor),
               ),
               SizedBox(height: 2.h),
-
               CategoryList(
                 categories: [
                   Appstrings.uxui,
@@ -54,10 +52,7 @@ class ExploreScreen extends StatelessWidget {
                   Appstrings.portFolio,
                 ],
               ),
-
               SizedBox(height: 1.5.h),
-
-              // Courses Text
               CustomText(
                 text: Appstrings.categories,
                 style: Theme.of(context)
@@ -65,9 +60,7 @@ class ExploreScreen extends StatelessWidget {
                     .titleMedium
                     ?.copyWith(color: Appcolors.mainColor),
               ),
-
               SizedBox(height: 1.h),
-
               Expanded(
                 child: ListView(
                   padding: EdgeInsets.zero,

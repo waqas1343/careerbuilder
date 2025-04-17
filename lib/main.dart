@@ -1,6 +1,6 @@
 import 'package:careerbuilder/nevigation/routers/routes_naming.dart';
 import 'package:careerbuilder/view/bottom_navigation/bottom_navigation.dart';
-import 'package:careerbuilder/view/screens/explore_screen/explore_screen.dart';
+import 'package:careerbuilder/view/screens/learning_screen/learning_screen.dart';
 import 'package:careerbuilder/view_model/multi_Provider/multi_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
             theme: AppTextTheme.lightTheme,
             darkTheme: AppTextTheme.darkTheme,
             themeMode: ThemeMode.light,
-            home: ExploreScreen(),
+            home: BottomNavScreen(),
           );
         },
       ),

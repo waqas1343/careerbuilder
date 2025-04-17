@@ -1,4 +1,7 @@
-import 'package:careerbuilder/view/screens/homePage/home_page.dart';
+import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
+import 'package:careerbuilder/view/screens/explore_screen/explore_screen.dart';
+import 'package:careerbuilder/view/screens/homepage_screen/home_page.dart';
+import 'package:careerbuilder/view/screens/learning_screen/learning_screen.dart';
 import 'package:careerbuilder/view_model/Controller/bottom_navigation_controller/bottom_navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,14 +9,14 @@ import 'package:sizer/sizer.dart';
 
 class BottomNavScreen extends StatelessWidget {
   final List<Widget> pages = [
-    Center(child: HomePage()),
-    Center(child: Text("Search Page", style: TextStyle(color: Colors.white))),
-    Center(child: Text("Shield Page", style: TextStyle(color: Colors.white))),
+    HomePage(),
+    ExploreScreen(),
+    LearningScreen(),
     Center(child: Text("Jobs Page", style: TextStyle(color: Colors.white))),
     Center(child: Text("Profile Page", style: TextStyle(color: Colors.white))),
   ];
 
-   BottomNavScreen({super.key});
+  BottomNavScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class BottomNavScreen extends StatelessWidget {
 
     return Scaffold(
       extendBody: true,
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[900],
       body: pages[navProvider.currentIndex],
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(bottom: 2.h),
@@ -55,7 +58,7 @@ class BottomNavScreen extends StatelessWidget {
       child: Icon(
         icon,
         color: isSelected ? Colors.white : Colors.grey,
-        size: isSelected ? 24.sp : 20.sp,
+        size: isSelected ? 24.sp : 24.sp,
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:careerbuilder/model/course_lists/course_list.dart';
+import 'package:careerbuilder/model/course_model/course_listview_model.dart';
 import 'package:careerbuilder/utils/constant/custom_text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';

@@ -4,7 +4,7 @@ import 'package:careerbuilder/utils/constant/app_colours/appcolors.dart';
 class AppTextTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: Appcolors.bgColor,
+    scaffoldBackgroundColor: Appcolors.textColor,
     fontFamily: "Oddval",
     textTheme: TextTheme(
       displayLarge: TextStyle(fontSize: 32, color: Appcolors.bgColor),
@@ -20,11 +20,11 @@ class AppTextTheme {
           fontWeight: FontWeight.w600,
           color: Appcolors.textColor),
       titleLarge: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.w500, color: Appcolors.bgColor),
+          fontSize: 18, fontWeight: FontWeight.w500, color: Appcolors.btColorW),
       titleMedium: TextStyle(
           fontSize: 16, fontWeight: FontWeight.w400, color: Appcolors.btColorW),
       titleSmall: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, color: Appcolors.bgColor),
+          fontSize: 14, fontWeight: FontWeight.w400, color: Appcolors.btColorW),
       bodyLarge: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
