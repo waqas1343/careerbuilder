@@ -1,6 +1,7 @@
 import 'package:careerbuilder/view_model/Controller/bottom_navigation_controller/bottom_navigation_controller.dart';
 import 'package:careerbuilder/view_model/Controller/calender_provider/calender_provider.dart';
 import 'package:careerbuilder/view_model/Controller/category_selector_controller/category_selector_controller.dart';
+import 'package:careerbuilder/view_model/Controller/learning_task/learning_task_controller.dart';
 import 'package:careerbuilder/view_model/Controller/splashscreen_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -21,5 +22,8 @@ final List<ChangeNotifierProvider> multiAppProvider = [
   ),
   ChangeNotifierProvider<CalendarProvider>(
     create: (context) => CalendarProvider(),
+  ),
+  ChangeNotifierProvider<TaskProvider>(
+    create: (context) => TaskProvider(),
   ),
 ];

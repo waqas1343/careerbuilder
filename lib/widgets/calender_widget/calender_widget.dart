@@ -27,7 +27,7 @@ class CalendarWidget extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 2.h,
+            height: 5.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

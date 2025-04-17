@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
             theme: AppTextTheme.lightTheme,
             darkTheme: AppTextTheme.darkTheme,
             themeMode: ThemeMode.light,
-            home: BottomNavScreen(),
+            home: LearningScreen(),
           );
         },
       ),

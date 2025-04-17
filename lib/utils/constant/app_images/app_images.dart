@@ -9,4 +9,6 @@ class AppImages {
   static const String banner4 = 'assets/images/31.png';
   static const String banner5 = 'assets/images/33.png';
   static const String banner6 = 'assets/images/34.png';
+  static const String learning1 = 'assets/images/41.png';
+  static const String learning2 = 'assets/images/42.png';
 }
